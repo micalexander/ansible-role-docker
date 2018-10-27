@@ -1,0 +1,14 @@
+---
+- name: Add Docker GPG key
+  apt_key: url=https://download.docker.com/linux/ubuntu/gpg
+
+- name: Add Docker APT repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+
+- name: Install list of packages
+  apt:
+    state: present
+    update_cache: yes
+    name: [ 'docker-ce' ]
+

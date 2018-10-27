@@ -1,0 +1,3 @@
+---
+- name: enable Docker
+  command: systemctl enable docker
